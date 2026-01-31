@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vienna Café Collection</title>
+    <meta name="description" content="Discover Vienna's finest specialty coffee spots - Café Fokus and The Truth Wollzeile.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #F5F1EB 0%, #E8E0D5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #3D2B1F;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #6B5344;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 900px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            width: 350px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #3D2B1F;
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: #6B6B6B;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .card .location {
+            font-size: 0.85rem;
+            color: #5C7C5C;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card .arrow {
+            margin-top: 1rem;
+            color: #C9A962;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .arrow {
+            transform: translateX(8px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Vienna Café Collection</h1>
+    <p class="subtitle">Specialty coffee experiences in the heart of Vienna</p>
+    
+    <div class="cards">
+        <a href="CafeFokus.html" class="card">
+            <h2>Café Fokus</h2>
+            <p>Specialty coffeehouse with artisanal coffee, vegan pastries, and a relaxed co-working atmosphere near Augarten.</p>
+            <span class="location">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Leopoldstadt, Vienna
+            </span>
+            <div class="arrow">→</div>
+        </a>
+        
+        <a href="TheTruthWollzeile.html" class="card">
+            <h2>The Truth Wollzeile</h2>
+            <p>Premium specialty coffee and desserts, famous for San Sebastián cheesecake and Italian coffee excellence.</p>
+            <span class="location">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Innere Stadt, Vienna
+            </span>
+            <div class="arrow">→</div>
+        </a>
+    </div>
+</body>
+</html>
