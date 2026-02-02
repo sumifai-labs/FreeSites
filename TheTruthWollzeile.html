@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Truth Wollzeile | Specialty Coffee & Desserts in Vienna</title>
-    <meta name="description" content="The Truth Wollzeile - Specialty coffee shop and dessert café in Vienna's historic first district. Famous for San Sebastián cheesecake and premium Italian coffee.">
+    <title>The Truth Coffee | Specialty Coffee & Desserts in Vienna</title>
+    <meta name="description" content="The Truth Coffee - Specialty coffee shops and dessert cafés across Vienna. Famous for San Sebastián cheesecake and premium Italian coffee. 4 locations throughout the city.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -603,6 +603,177 @@
             color: var(--color-gray);
         }
 
+        /* Locations Grid */
+        .locations-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .location-card {
+            background: var(--color-light);
+            padding: 1.25rem;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .location-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-card.coming-soon {
+            opacity: 0.85;
+            background: linear-gradient(145deg, var(--color-light) 0%, #f0ebe3 100%);
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: var(--color-gold);
+            color: var(--color-light);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .location-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .location-card-header .location-icon {
+            font-size: 1.1rem;
+        }
+
+        .location-card-header h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-brown);
+        }
+
+        .location-card-body {
+            margin-bottom: 1rem;
+        }
+
+        .location-address {
+            font-weight: 500;
+            color: var(--color-brown);
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .location-hours {
+            display: flex;
+            gap: 0.5rem;
+            color: var(--color-gray);
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-hours span:first-child {
+            font-size: 0.85rem;
+        }
+
+        .location-hours p {
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .location-phone {
+            margin-top: 0.5rem;
+        }
+
+        .location-phone a {
+            color: var(--color-gray);
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .location-phone a:hover {
+            color: var(--color-gold);
+        }
+
+        .coming-soon-text {
+            color: var(--color-gray);
+            font-style: italic;
+            font-size: 0.75rem;
+            font-weight: 300;
+        }
+
+        .location-card-footer {
+            margin-top: auto;
+        }
+
+        .btn-location {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--color-brown);
+            color: var(--color-brown);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-location:hover {
+            background: var(--color-brown);
+            color: var(--color-cream);
+        }
+
+        .locations-map-container {
+            background: var(--color-light);
+            height: 100%;
+            min-height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .locations-map-container iframe {
+            width: 100%;
+            height: calc(100% + 60px);
+            min-height: 510px;
+            border: none;
+            margin-top: -60px;
+        }
+
+        .shared-amenities {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .shared-amenities h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-brown);
+            margin-bottom: 1.5rem;
+        }
+
+        .shared-amenities .amenities {
+            justify-content: center;
+        }
+
         /* Footer */
         footer {
             background: var(--color-dark);
@@ -699,6 +870,23 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .locations-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .locations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .locations-map-container {
+                min-height: 350px;
+            }
+
+            .locations-map-container iframe {
+                min-height: 350px;
+            }
+
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
@@ -732,6 +920,10 @@
 
             .menu-categories,
             .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .locations-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -782,13 +974,13 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">THE TRUTH</a>
+            <a href="#" class="logo">THE TRUTH COFFEE</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#signature">Signature</a></li>
                 <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#location">Visit</a></li>
+                <li><a href="#locations">Locations</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
                 <span></span>
@@ -801,10 +993,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">Vienna's First District</span>
-            <h1>The Truth Wollzeile</h1>
-            <p>Specialty coffee and artisanal desserts in the heart of Vienna's historic center</p>
-            <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+            <span class="hero-badge">4 Locations Across Vienna</span>
+            <h1>The Truth Coffee</h1>
+            <p>Specialty coffee and artisanal desserts at multiple locations throughout Vienna</p>
+            <a href="#locations" class="btn btn-primary">Find a Location</a>
         </div>
     </section>
 
@@ -821,8 +1013,8 @@
                 </div>
                 <div class="about-content">
                     <h3>Where Quality Meets Simplicity</h3>
-                    <p>Opened in late 2021 by owner Cuneyt Kilic, The Truth Wollzeile occupies a small, modern space tucked in a passage off Wollzeile Street. Our café is designed around the "coffee to go" concept, emphasizing premium Italian coffee from Caffè Diemme and high-quality artisanal sweets.</p>
-                    <p>Despite our compact size, we offer a cozy, stylish environment with our signature minimalist aesthetic and limited outdoor seating for those who wish to linger a little longer.</p>
+                    <p>Founded by owner Cuneyt Kilic, The Truth Coffee has grown from a single location to a beloved chain of specialty coffee shops across Vienna. Each café is designed around the "coffee to go" concept, emphasizing premium Italian coffee from Caffè Diemme and high-quality artisanal sweets.</p>
+                    <p>With locations in Nußdorfer Straße, Wollzeile, Kaiserstraße, and soon Josefstädter Straße, we bring our signature minimalist aesthetic and exceptional quality to neighborhoods across the city.</p>
                     <div class="about-features">
                         <div class="feature">
                             <div class="feature-icon">🇮🇹</div>
@@ -941,65 +1133,128 @@
         </div>
     </section>
 
-    <!-- Location Section -->
-    <section class="location" id="location">
+    <!-- Locations Section -->
+    <section class="location" id="locations">
         <div class="section-container">
             <div class="section-header">
-                <h2>Visit Us</h2>
+                <h2>Our Locations</h2>
                 <div class="divider"></div>
-                <p>Find us in Vienna's historic Innere Stadt, just steps from the city center</p>
+                <p>Find your nearest The Truth Coffee across Vienna</p>
             </div>
-            <div class="location-grid">
-                <div class="location-info">
-                    <h3>Practical Details</h3>
-                    <div class="info-item">
-                        <div class="info-icon">📍</div>
-                        <div class="info-content">
-                            <h4>Address</h4>
-                            <p>Wollzeile 5, 1010 Wien, Austria</p>
+            
+            <!-- Locations Wrapper with Grid and Map -->
+            <div class="locations-wrapper">
+                <!-- Locations Grid -->
+                <div class="locations-grid">
+                    <!-- Nußdorfer Straße -->
+                    <div class="location-card">
+                        <div class="location-card-header">
+                            <div class="location-icon">📍</div>
+                            <h3>Nußdorfer Straße</h3>
+                        </div>
+                        <div class="location-card-body">
+                            <p class="location-address">Nußdorfer Straße 78, 1090 Wien</p>
+                            <div class="location-hours">
+                                <span>🕐</span>
+                                <div>
+                                    <p>Mon – Fri: 09:30 – 17:30</p>
+                                    <p>Sat – Sun: 09:30 – 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-card-footer">
+                            <a href="https://maps.google.com/?q=Nußdorfer+Straße+78+1090+Wien" target="_blank" class="btn-location">Directions</a>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-icon">📞</div>
-                        <div class="info-content">
-                            <h4>Phone</h4>
-                            <p><a href="tel:+436604443630">0660 4443630</a></p>
+
+                    <!-- Wollzeile -->
+                    <div class="location-card">
+                        <div class="location-card-header">
+                            <div class="location-icon">📍</div>
+                            <h3>Wollzeile</h3>
+                        </div>
+                        <div class="location-card-body">
+                            <p class="location-address">Wollzeile 5, 1010 Wien</p>
+                            <div class="location-hours">
+                                <span>🕐</span>
+                                <div>
+                                    <p>Mon – Fri: 09:30 – 17:30</p>
+                                    <p>Sat – Sun: 09:30 – 18:00</p>
+                                </div>
+                            </div>
+                            <p class="location-phone"><a href="tel:+436604443630">📞 0660 4443630</a></p>
+                        </div>
+                        <div class="location-card-footer">
+                            <a href="https://maps.google.com/?q=Wollzeile+5+1010+Wien" target="_blank" class="btn-location">Directions</a>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-icon">🕐</div>
-                        <div class="info-content">
-                            <h4>Opening Hours</h4>
-                            <p>Monday – Friday: 09:30 – 17:30</p>
-                            <p>Saturday – Sunday: 09:30 – 18:00</p>
+
+                    <!-- Kaiserstraße -->
+                    <div class="location-card">
+                        <div class="location-card-header">
+                            <div class="location-icon">📍</div>
+                            <h3>Kaiserstraße</h3>
+                        </div>
+                        <div class="location-card-body">
+                            <p class="location-address">Kaiserstraße 37, 1070 Wien</p>
+                            <div class="location-hours">
+                                <span>🕐</span>
+                                <div>
+                                    <p>Mon – Fri: 09:30 – 17:30</p>
+                                    <p>Sat – Sun: 09:30 – 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-card-footer">
+                            <a href="https://maps.google.com/?q=The+Truth+Coffee+Kaiserstraße+37+1070+Wien+Austria" target="_blank" class="btn-location">Directions</a>
                         </div>
                     </div>
-                    <div class="amenities">
-                        <div class="amenity">
-                            <span>🥡</span>
-                            <span>Takeaway</span>
+
+                    <!-- Josefstädter Straße (Coming Soon) -->
+                    <div class="location-card coming-soon">
+                        <div class="coming-soon-badge">Coming Soon</div>
+                        <div class="location-card-header">
+                            <div class="location-icon">📍</div>
+                            <h3>Josefstädter Str.</h3>
                         </div>
-                        <div class="amenity">
-                            <span>💳</span>
-                            <span>Card Payments</span>
-                        </div>
-                        <div class="amenity">
-                            <span>♿</span>
-                            <span>Wheelchair Accessible</span>
-                        </div>
-                        <div class="amenity">
-                            <span>🪑</span>
-                            <span>Outdoor Seating</span>
+                        <div class="location-card-body">
+                            <p class="location-address">Josefstädterstraße 42, 1080 Wien</p>
+                            <p class="coming-soon-text">Opening soon! Stay tuned.</p>
                         </div>
                     </div>
                 </div>
-                <div class="location-map">
+
+                <!-- Google Maps -->
+                <div class="locations-map-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.0!2d16.3734682!3d48.2093966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07c301895f87%3A0x44377c667723de9a!2sThe%20Truth%20Wollzeile!5e0!3m2!1sen!2sat!4v1706700000000"
+                        src="https://www.google.com/maps/d/embed?mid=1spFKhsHnjkzfJvr_bCWFFB1HCnj9EUY&ehbc=2E312F"
                         allowfullscreen=""
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
+                </div>
+            </div>
+
+            <!-- Shared Amenities -->
+            <div class="shared-amenities">
+                <h4>Available at All Locations</h4>
+                <div class="amenities">
+                    <div class="amenity">
+                        <span>🥡</span>
+                        <span>Takeaway</span>
+                    </div>
+                    <div class="amenity">
+                        <span>💳</span>
+                        <span>Card Payments</span>
+                    </div>
+                    <div class="amenity">
+                        <span>♿</span>
+                        <span>Wheelchair Accessible</span>
+                    </div>
+                    <div class="amenity">
+                        <span>🪑</span>
+                        <span>Outdoor Seating</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1009,8 +1264,8 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <h3>The Truth Wollzeile</h3>
-                <p>A specialty coffee shop and dessert café in Vienna's historic first district. Known for our minimalist style, premium Italian coffee, and signature Basque-style San Sebastián cheesecake.</p>
+                <h3>The Truth Coffee</h3>
+                <p>Specialty coffee shops and dessert cafés across Vienna. Known for our minimalist style, premium Italian coffee, and signature Basque-style San Sebastián cheesecake.</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
@@ -1019,20 +1274,21 @@
                     <li><a href="#menu">Our Menu</a></li>
                     <li><a href="#signature">Signature Cheesecake</a></li>
                     <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#location">Visit Us</a></li>
+                    <li><a href="#locations">Our Locations</a></li>
                 </ul>
             </div>
             <div class="footer-hours">
-                <h4>Hours</h4>
-                <p>Mon – Fri: 09:30 – 17:30</p>
+                <h4>Our Locations</h4>
+                <p>📍 Nußdorfer Straße 78</p>
+                <p>📍 Wollzeile 5</p>
+                <p>📍 Kaiserstraße 37</p>
+                <p>📍 Josefstädterstraße 42 <em>(coming soon)</em></p>
+                <p style="margin-top: 1rem;">Mon – Fri: 09:30 – 17:30</p>
                 <p>Sat – Sun: 09:30 – 18:00</p>
-                <p style="margin-top: 1rem;">Wollzeile 5</p>
-                <p>1010 Wien, Austria</p>
-                <p style="margin-top: 0.5rem;"><a href="tel:+436604443630" style="color: inherit; text-decoration: none;">0660 4443630</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 The Truth Wollzeile. All rights reserved.</p>
+            <p>© 2026 The Truth Coffee. All rights reserved.</p>
             <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">Powered by <a href="https://sumifai.com/web/" style="color: inherit; text-decoration: underline;">sumifai.web</a></p>
         </div>
     </footer>
