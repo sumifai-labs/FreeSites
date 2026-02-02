@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaRoche Restaurant | Orientalische Küche & Shawarma in Wien</title>
+    <meta name="description" content="LaRoche Restaurant - Authentische orientalische Küche in Wien. Shawarma, Mixed Grill, Kebbeh und mehr. Damaskus-inspiriertes Soulfood. Lieferung & Abholung verfügbar.">
+    <meta name="keywords" content="Orientalisches Restaurant Wien, Shawarma Wien, Arabisches Restaurant, Kebbeh, Mixed Grill Wien, Lieferservice orientalisch">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "LaRoche Restaurant",
+        "description": "Authentische orientalische Küche und Damaskus-inspiriertes Soulfood in Wien.",
+        "servesCuisine": ["Middle Eastern", "Arabic", "Syrian"],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Margaretenstraße 134",
+            "addressLocality": "Wien",
+            "postalCode": "1050",
+            "addressCountry": "AT"
+        },
+        "priceRange": "€€",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.2",
+            "reviewCount": "600"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --color-burgundy: #8B2635;
+            --color-burgundy-dark: #6B1D29;
+            --color-gold: #D4A84B;
+            --color-gold-light: #E8C97A;
+            --color-cream: #FBF7F0;
+            --color-warm-white: #FFFCF7;
+            --color-dark: #1A1814;
+            --color-text: #2D2A26;
+            --color-text-light: #5A5550;
+            --color-olive: #6B7B3C;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(251, 247, 240, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(139, 38, 53, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 20px rgba(139, 38, 53, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-burgundy);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-arabic {
+            font-size: 0.9rem;
+            color: var(--color-gold);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-burgundy);
+        }
+
+        .nav-order {
+            background: var(--color-burgundy);
+            color: white !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.3s ease !important;
+        }
+
+        .nav-order:hover {
+            background: var(--color-burgundy-dark);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-burgundy);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--color-cream) 0%, #F5EDE0 50%, #EDE3D3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 168, 75, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 38, 53, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Decorative Pattern */
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A84B' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--color-gold);
+            color: var(--color-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 700;
+            color: var(--color-burgundy);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-arabic {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--color-burgundy);
+            color: white;
+            border: 2px solid var(--color-burgundy);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-burgundy-dark);
+            border-color: var(--color-burgundy-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 38, 53, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-burgundy);
+            border: 2px solid var(--color-burgundy);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-burgundy);
+            color: white;
+        }
+
+        .btn-delivery {
+            background: var(--color-olive);
+            color: white;
+            border: 2px solid var(--color-olive);
+        }
+
+        .btn-delivery:hover {
+            background: #5a6a32;
+            border-color: #5a6a32;
+        }
+
+        /* Delivery Badges */
+        .delivery-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .delivery-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-warm-white);
+            padding: 0.75rem 1.25rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            font-size: 0.9rem;
+            color: var(--color-text);
+        }
+
+        .delivery-badge-icon {
+            font-size: 1.25rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 600;
+            color: var(--color-burgundy);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-burgundy));
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* Menu Section */
+        .menu {
+            background: var(--color-burgundy);
+            color: white;
+        }
+
+        .menu .section-header h2,
+        .menu .section-header p {
+            color: white;
+        }
+
+        .menu .divider {
+            background: var(--color-gold);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-category {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .menu-category:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .menu-category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-category h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-gold);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item-name {
+            font-weight: 500;
+        }
+
+        .menu-item-price {
+            color: var(--color-gold);
+            font-weight: 600;
+        }
+
+        .menu-item-desc {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        .menu-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .menu-note strong {
+            color: var(--color-gold);
+        }
+
+        /* Specialties Section */
+        .specialties {
+            background: var(--color-warm-white);
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .specialty-card {
+            background: var(--color-cream);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .specialty-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .specialty-image.shawarma {
+            background: linear-gradient(135deg, #E8D4B8 0%, #D4BC9A 100%);
+        }
+
+        .specialty-image.grill {
+            background: linear-gradient(135deg, #D4A88C 0%, #C49070 100%);
+        }
+
+        .specialty-image.kebbeh {
+            background: linear-gradient(135deg, #C4B090 0%, #B09A78 100%);
+        }
+
+        .specialty-image.chicken {
+            background: linear-gradient(135deg, #E8C8A8 0%, #D4B090 100%);
+        }
+
+        .specialty-content {
+            padding: 1.75rem;
+        }
+
+        .specialty-content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--color-burgundy);
+            margin-bottom: 0.5rem;
+        }
+
+        .specialty-content p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .specialty-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-burgundy);
+        }
+
+        .specialty-tag {
+            display: inline-block;
+            background: var(--color-gold);
+            color: var(--color-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 0.5rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--color-cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--color-burgundy) 0%, var(--color-burgundy-dark) 100%);
+            border-radius: 20px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '🍖';
+            font-size: 8rem;
+            opacity: 0.2;
+        }
+
+        .about-content h3 {
+            font-family: var(--font-serif);
+            font-size: 2.25rem;
+            color: var(--color-burgundy);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .about-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--color-warm-white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .about-feature-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: var(--color-warm-white);
+        }
+
+        .reviews-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .review-stat {
+            text-align: center;
+        }
+
+        .review-stat-number {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-burgundy);
+        }
+
+        .review-stat-label {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .review-stars {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--color-cream);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .review-quote {
+            font-size: 2.5rem;
+            color: var(--color-gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: var(--color-text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--color-burgundy);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--color-cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            color: var(--color-burgundy);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--color-warm-white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-weight: 600;
+            color: var(--color-burgundy);
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .contact-text p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .delivery-options {
+            background: var(--color-warm-white);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .delivery-options h4 {
+            font-family: var(--font-serif);
+            color: var(--color-burgundy);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .delivery-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .delivery-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--color-cream);
+            border-radius: 25px;
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .delivery-link:hover {
+            background: var(--color-burgundy);
+            color: white;
+        }
+
+        .contact-map {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-dark);
+            color: var(--color-cream);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand .footer-arabic {
+            color: var(--color-gold);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            font-weight: 300;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-links h4,
+        .footer-hours h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--color-gold);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--color-cream);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-hours p {
+            opacity: 0.7;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--color-burgundy);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            opacity: 0.5;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+                height: 350px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-cream);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-order {
+                margin: 0 auto;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-stats {
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .delivery-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .delivery-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                LaRoche
+                <span class="logo-arabic">مطعم لاروش</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#menu">Speisekarte</a></li>
+                <li><a href="#specialties">Spezialitäten</a></li>
+                <li><a href="#about">Über Uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#contact" class="nav-order">🛵 Bestellen</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <span class="hero-icon">🥙</span>
+            <span class="hero-badge">Damaskus-Inspiriert</span>
+            <h1>LaRoche Restaurant</h1>
+            <p class="hero-arabic">مطعم لاروش</p>
+            <p>Authentische orientalische Küche in Wien. Shawarma, Mixed Grill, Kebbeh und mehr – frisch zubereitet mit Liebe und Tradition. Ihr Soulfood aus dem Orient.</p>
+            <div class="hero-cta">
+                <a href="#menu" class="btn btn-primary">🍽️ Speisekarte</a>
+                <a href="#contact" class="btn btn-delivery">🛵 Jetzt bestellen</a>
+            </div>
+            <div class="delivery-badges">
+                <div class="delivery-badge">
+                    <span class="delivery-badge-icon">🏠</span>
+                    <span>Dine-In</span>
+                </div>
+                <div class="delivery-badge">
+                    <span class="delivery-badge-icon">🥡</span>
+                    <span>Takeaway</span>
+                </div>
+                <div class="delivery-badge">
+                    <span class="delivery-badge-icon">🛵</span>
+                    <span>Lieferung</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="specialties" id="specialties">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Unsere Spezialitäten</h2>
+                <div class="divider"></div>
+                <p>Entdecken Sie die beliebtesten Gerichte unserer Küche – authentisch und voller Geschmack</p>
+            </div>
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-image shawarma">🥙</div>
+                    <div class="specialty-content">
+                        <h3>Arabische Shawarma</h3>
+                        <p>Zartes, mariniertes Fleisch vom Drehspieß mit frischem Gemüse und hausgemachten Saucen</p>
+                        <span class="specialty-price">ab €10</span>
+                        <span class="specialty-tag">Bestseller</span>
+                    </div>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-image grill">🍢</div>
+                    <div class="specialty-content">
+                        <h3>Mix Grill</h3>
+                        <p>Köstliche Auswahl an gegrilltem Fleisch mit Beilagen und orientalischen Gewürzen</p>
+                        <span class="specialty-price">€25</span>
+                        <span class="specialty-tag">Für 2 Personen</span>
+                    </div>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-image kebbeh">🧆</div>
+                    <div class="specialty-content">
+                        <h3>Kebbeh</h3>
+                        <p>Traditionelle Spezialität aus Bulgur und Hackfleisch, knusprig frittiert</p>
+                        <span class="specialty-price">ab €8</span>
+                        <span class="specialty-tag">Hausgemacht</span>
+                    </div>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-image chicken">🍗</div>
+                    <div class="specialty-content">
+                        <h3>Halbes Grillhähnchen</h3>
+                        <p>Saftig gegrilltes Hähnchen mit Knoblauchsauce und knusprigen Pommes</p>
+                        <span class="specialty-price">€13,50</span>
+                        <span class="specialty-tag">Beliebt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Unsere Speisekarte</h2>
+                <div class="divider"></div>
+                <p>Frische Zutaten, authentische Rezepte – jeden Tag für Sie zubereitet</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-category">
+                    <div class="menu-category-icon">🥙</div>
+                    <h3>Shawarma & Wraps</h3>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Chicken Shawarma</span>
+                            <span class="menu-item-desc">Mit Salat, Pickles & Knoblauchsauce</span>
+                        </div>
+                        <span class="menu-item-price">€10</span>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Shawarma Teller</span>
+                            <span class="menu-item-desc">Mit Reis, Salat & Hummus</span>
+                        </div>
+                        <span class="menu-item-price">€14</span>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Falafel Wrap</span>
+                            <span class="menu-item-desc">Vegetarisch mit Tahini</span>
+                        </div>
+                        <span class="menu-item-price">€8</span>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <div class="menu-category-icon">🍢</div>
+                    <h3>Vom Grill</h3>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Shish Tawook</span>
+                            <span class="menu-item-desc">Marinierte Hühnerbrustspieße</span>
+                        </div>
+                        <span class="menu-item-price">€15</span>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Mix Grill</span>
+                            <span class="menu-item-desc">Verschiedene Fleischsorten</span>
+                        </div>
+                        <span class="menu-item-price">€25</span>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Halbes Grillhähnchen</span>
+                            <span class="menu-item-desc">Mit Pommes & Sauce</span>
+                        </div>
+                        <span class="menu-item-price">€13,50</span>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <div class="menu-category-icon">🥗</div>
+                    <h3>Beilagen & Salate</h3>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Tabbouleh</span>
+                            <span class="menu-item-desc">Frischer Petersiliensalat</span>
+                        </div>
+                        <span class="menu-item-price">€6</span>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Hummus</span>
+                            <span class="menu-item-desc">Cremig mit Olivenöl</span>
+                        </div>
+                        <span class="menu-item-price">€5</span>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Pommes Frites</span>
+                            <span class="menu-item-desc">Knusprig & goldbraun</span>
+                        </div>
+                        <span class="menu-item-price">€4</span>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <div class="menu-category-icon">🧆</div>
+                    <h3>Spezialitäten</h3>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Kebbeh</span>
+                            <span class="menu-item-desc">Traditionell frittiert (3 Stück)</span>
+                        </div>
+                        <span class="menu-item-price">€8</span>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Falafel Teller</span>
+                            <span class="menu-item-desc">Mit Salat & Saucen</span>
+                        </div>
+                        <span class="menu-item-price">€11</span>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <span class="menu-item-name">Coleslaw</span>
+                            <span class="menu-item-desc">Hausgemacht</span>
+                        </div>
+                        <span class="menu-item-price">€4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-note">
+                <strong>🚚 Lieferung verfügbar!</strong> Bestellen Sie bequem über Wolt, Foodora oder direkt bei uns.
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image"></div>
+                <div class="about-content">
+                    <h3>Soulfood aus Damaskus</h3>
+                    <p>Bei LaRoche bringen wir die authentischen Aromen des Orients nach Wien. Unsere Rezepte sind von der traditionellen Damaszener Küche inspiriert – reich an Gewürzen, frischen Zutaten und Liebe zum Detail.</p>
+                    <p>Ob knusprige Shawarma, saftiges Grillhähnchen oder hausgemachte Kebbeh – jedes Gericht wird frisch zubereitet und mit Leidenschaft serviert. Genießen Sie bei uns oder bestellen Sie bequem nach Hause.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🌿</div>
+                            <span class="about-feature-text">Frische Zutaten</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">👨‍🍳</div>
+                            <span class="about-feature-text">Authentische Rezepte</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">👨‍👩‍👧‍👦</div>
+                            <span class="about-feature-text">Familienfreundlich</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🛵</div>
+                            <span class="about-feature-text">Schnelle Lieferung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Was Unsere Gäste Sagen</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="reviews-stats">
+                <div class="review-stat">
+                    <div class="review-stat-number">4.2</div>
+                    <div class="review-stars">★★★★☆</div>
+                    <div class="review-stat-label">Durchschnittliche Bewertung</div>
+                </div>
+                <div class="review-stat">
+                    <div class="review-stat-number">600+</div>
+                    <div class="review-stat-label">Zufriedene Bewertungen</div>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">Beste Shawarma in Wien! Große Portionen und super freundliches Personal. Komme immer wieder gerne.</p>
+                    <span class="review-author">— Google Review</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">Authentisch und lecker! Das Grillhähnchen ist perfekt gewürzt und die Knoblauchsauce ist ein Traum.</p>
+                    <span class="review-author">— Google Review</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">Schneller Service, tolles Essen und faire Preise. Die Kebbeh sind hausgemacht und schmecken fantastisch!</p>
+                    <span class="review-author">— Google Review</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Besuchen Sie Uns</h2>
+                <div class="divider"></div>
+                <p>Kommen Sie vorbei oder bestellen Sie bequem nach Hause</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Kontakt & Standort</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Adresse</h4>
+                            <p>Margaretenstraße 134<br>1050 Wien, Österreich</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-text">
+                            <h4>Öffnungszeiten</h4>
+                            <p>Täglich: 11:00 – 22:00 Uhr</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🚇</div>
+                        <div class="contact-text">
+                            <h4>Anfahrt</h4>
+                            <p>U4 Pilgramgasse, Bus 59A<br>Direkt an der Margaretenstraße</p>
+                        </div>
+                    </div>
+
+                    <div class="delivery-options">
+                        <h4>🛵 Online Bestellen</h4>
+                        <div class="delivery-links">
+                            <a href="#" class="delivery-link">📱 Wolt</a>
+                            <a href="#" class="delivery-link">📱 Foodora</a>
+                            <a href="#" class="delivery-link">📞 Telefonisch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Margaretenstraße+134,+1050+Wien,+Austria&zoom=16"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>LaRoche Restaurant</h3>
+                <p class="footer-arabic">مطعم لاروش</p>
+                <p>Authentische orientalische Küche in Wien. Shawarma, Mixed Grill, Kebbeh und mehr – Damaskus-inspiriertes Soulfood für die ganze Familie.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#specialties">Spezialitäten</a></li>
+                    <li><a href="#menu">Speisekarte</a></li>
+                    <li><a href="#about">Über Uns</a></li>
+                    <li><a href="#reviews">Bewertungen</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-hours">
+                <h4>Öffnungszeiten</h4>
+                <p>Täglich: 11:00 – 22:00 Uhr</p>
+                <p style="margin-top: 1rem;">📍 Margaretenstraße 134<br>1050 Wien</p>
+                <p style="margin-top: 1rem;">🛵 Lieferung über Wolt & Foodora</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 LaRoche Restaurant. Alle Rechte vorbehalten.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">Powered by <a href="https://sumifai.com/web/" style="color: inherit; text-decoration: underline;">sumifai.web</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.getElementById('navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
