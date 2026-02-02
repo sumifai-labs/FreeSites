@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Ihr Geschäftsname] | Traditionelle Österreichische Küche in Salzburg</title>
+    <meta name="description" content="[Ihr Geschäftsname] Traditionslokal in Salzburg. Klassische österreichische Hausmannskost, Schnitzel, Cordon Bleu, Käsespätzle und Meeresfrüchte in gemütlicher Stubenatmosphäre.">
+    <meta name="keywords" content="Restaurant Salzburg, Österreichische Küche, Schnitzel Salzburg, Cordon Bleu, Käsespätzle, Stüberl Salzburg, Hausmannskost">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- LocalBusiness Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "[Ihr Geschäftsname]",
+        "description": "Traditionslokal mit klassischer österreichischer Hausmannskost in gemütlicher Stubenatmosphäre.",
+        "servesCuisine": ["Austrian", "European", "Seafood"],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "[Ihre Adresse]",
+            "addressLocality": "Salzburg",
+            "postalCode": "[PLZ]",
+            "addressCountry": "AT"
+        },
+        "priceRange": "€€",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.4",
+            "reviewCount": "150"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --color-wood-dark: #3D2314;
+            --color-wood: #5C3D2E;
+            --color-wood-light: #8B5E3C;
+            --color-cream: #FDF6E9;
+            --color-warm-white: #FFFBF5;
+            --color-gold: #C9A227;
+            --color-gold-light: #E5C158;
+            --color-red: #8B2500;
+            --color-green: #4A6741;
+            --color-text: #2C1810;
+            --color-text-light: #5C4033;
+            --font-serif: 'Merriweather', Georgia, serif;
+            --font-sans: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Wood texture pattern */
+        .wood-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%235C3D2E' fill-opacity='0.03'%3E%3Cpath d='M0 0h100v2H0zM0 10h100v1H0zM0 23h100v1H0zM0 35h100v2H0zM0 48h100v1H0zM0 60h100v1H0zM0 73h100v2H0zM0 85h100v1H0zM0 97h100v1H0z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(61, 35, 20, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 3px solid var(--color-gold);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.75rem 2rem;
+            box-shadow: 0 4px 20px rgba(61, 35, 20, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-cream);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-cream);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .nav-reserve {
+            background: var(--color-gold);
+            color: var(--color-wood-dark) !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 3px;
+            font-weight: 600;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-reserve:hover {
+            background: var(--color-gold-light);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-cream);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--color-wood-dark) 0%, var(--color-wood) 50%, var(--color-wood-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A227' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, var(--color-cream), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 162, 39, 0.2);
+            border: 2px solid var(--color-gold);
+            color: var(--color-gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-weight: 700;
+            color: var(--color-cream);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--color-gold);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(253, 246, 233, 0.85);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--color-gold);
+            color: var(--color-wood-dark);
+            border: 2px solid var(--color-gold);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-gold-light);
+            border-color: var(--color-gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-cream);
+            border: 2px solid var(--color-cream);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-cream);
+            color: var(--color-wood-dark);
+        }
+
+        /* Tradition Badge */
+        .tradition-badge {
+            margin-top: 3rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(253, 246, 233, 0.1);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+        }
+
+        .tradition-badge-icon {
+            font-size: 2rem;
+        }
+
+        .tradition-badge-text {
+            text-align: left;
+            color: var(--color-cream);
+        }
+
+        .tradition-badge-text strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--color-gold);
+        }
+
+        .tradition-badge-text span {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            color: var(--color-wood-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-wood-light));
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* Specialties Section */
+        .specialties {
+            background: var(--color-wood-dark);
+            color: var(--color-cream);
+        }
+
+        .specialties .section-header h2,
+        .specialties .section-header p {
+            color: var(--color-cream);
+        }
+
+        .specialties .divider {
+            background: var(--color-gold);
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .specialty-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--color-gold);
+        }
+
+        .specialty-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .specialty-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-gold);
+        }
+
+        .specialty-card p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .specialty-tag {
+            display: inline-block;
+            background: var(--color-gold);
+            color: var(--color-wood-dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        /* Menu Section */
+        .menu {
+            background: var(--color-warm-white);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .menu-category {
+            background: var(--color-cream);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(61, 35, 20, 0.08);
+            border: 1px solid rgba(92, 61, 46, 0.1);
+        }
+
+        .menu-category-header {
+            background: var(--color-wood);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .menu-category-icon {
+            font-size: 2rem;
+        }
+
+        .menu-category-header h3 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--color-cream);
+        }
+
+        .menu-category-content {
+            padding: 1.5rem;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-wood-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .menu-item-info p {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        .menu-item-price {
+            color: var(--color-gold);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .menu-note {
+            background: rgba(201, 162, 39, 0.1);
+            border: 1px solid var(--color-gold);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .menu-note h4 {
+            font-family: var(--font-serif);
+            color: var(--color-wood-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-note p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--color-cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--color-wood) 0%, var(--color-wood-dark) 100%);
+            border-radius: 10px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid var(--color-gold);
+        }
+
+        .about-image::before {
+            content: '🏠';
+            font-size: 8rem;
+            opacity: 0.3;
+        }
+
+        .about-content h3 {
+            font-family: var(--font-serif);
+            font-size: 2.25rem;
+            color: var(--color-wood-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .about-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--color-warm-white);
+            border: 2px solid var(--color-wood-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .about-feature-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-wood-dark);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: linear-gradient(135deg, var(--color-wood) 0%, var(--color-wood-dark) 100%);
+            color: var(--color-cream);
+        }
+
+        .reviews .section-header h2,
+        .reviews .section-header p {
+            color: var(--color-cream);
+        }
+
+        .reviews .divider {
+            background: var(--color-gold);
+        }
+
+        .reviews-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .review-stat {
+            text-align: center;
+        }
+
+        .review-stat-number {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            line-height: 1;
+        }
+
+        .review-stat-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        .review-stars {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(201, 162, 39, 0.2);
+        }
+
+        .review-quote {
+            font-size: 3rem;
+            color: var(--color-gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--color-gold);
+            font-size: 0.9rem;
+        }
+
+        /* Hours Section */
+        .hours {
+            background: var(--color-warm-white);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hours-card {
+            background: var(--color-cream);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(61, 35, 20, 0.08);
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .hours-card:hover {
+            border-color: var(--color-gold);
+        }
+
+        .hours-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hours-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--color-wood-dark);
+            margin-bottom: 1rem;
+        }
+
+        .hours-card p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .hours-card .highlight {
+            color: var(--color-wood-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .hours-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(201, 162, 39, 0.1);
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hours-note p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--color-cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            color: var(--color-wood-dark);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--color-warm-white);
+            border: 2px solid var(--color-wood-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-weight: 600;
+            color: var(--color-wood-dark);
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .contact-text p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .reservation-box {
+            background: var(--color-wood);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .reservation-box h4 {
+            font-family: var(--font-serif);
+            color: var(--color-gold);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .reservation-box p {
+            font-size: 0.9rem;
+            color: rgba(253, 246, 233, 0.85);
+            margin-bottom: 1rem;
+        }
+
+        .contact-map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(61, 35, 20, 0.15);
+            height: 100%;
+            min-height: 400px;
+            border: 3px solid var(--color-wood);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-wood-dark);
+            color: var(--color-cream);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-gold);
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            font-weight: 300;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-links h4,
+        .footer-hours h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            color: var(--color-gold);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--color-cream);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--color-gold);
+        }
+
+        .footer-hours p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+                height: 350px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-wood-dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-reserve {
+                margin: 0 auto;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-stats {
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tradition-badge {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tradition-badge-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🏠</span>
+                [Ihr Geschäftsname]
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#specialties">Spezialitäten</a></li>
+                <li><a href="#menu">Speisekarte</a></li>
+                <li><a href="#about">Über Uns</a></li>
+                <li><a href="#hours">Öffnungszeiten</a></li>
+                <li><a href="#contact" class="nav-reserve">Reservieren</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-icon">🍽️</span>
+            <span class="hero-badge">Traditionslokal seit Generationen</span>
+            <h1>[Ihr Geschäftsname]</h1>
+            <p class="hero-tagline">Echte österreichische Gastfreundschaft</p>
+            <p>Willkommen in unserem gemütlichen Stüberl. Genießen Sie klassische österreichische Hausmannskost, frische Meeresfrüchte und herzliche Gastlichkeit in traditioneller Stubenatmosphäre.</p>
+            <div class="hero-cta">
+                <a href="#menu" class="btn btn-primary">Speisekarte ansehen</a>
+                <a href="#contact" class="btn btn-secondary">Tisch reservieren</a>
+            </div>
+            <div class="tradition-badge">
+                <span class="tradition-badge-icon">⭐</span>
+                <div class="tradition-badge-text">
+                    <strong>Beliebtes Traditionslokal</strong>
+                    <span>Klassische Küche mit Herz</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="specialties" id="specialties">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Unsere Spezialitäten</h2>
+                <div class="divider"></div>
+                <p>Klassische österreichische Küche mit regionalen Zutaten, frisch zubereitet à la minute</p>
+            </div>
+            <div class="specialties-grid">
+                <div class="specialty-card">
+                    <div class="specialty-icon">🥩</div>
+                    <h3>Wiener Schnitzel</h3>
+                    <p>Unser Klassiker: zartes Kalbfleisch, goldbraun gebacken nach Wiener Art. Serviert mit Petersilkartoffeln und Preiselbeeren.</p>
+                    <span class="specialty-tag">Hausklassiker</span>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-icon">🧀</div>
+                    <h3>Cordon Bleu</h3>
+                    <p>Gefüllt mit feinstem Schinken und würzigem Käse, knusprig gebacken. Ein Gaumenschmaus für Genießer.</p>
+                    <span class="specialty-tag">Beliebt</span>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-icon">🍝</div>
+                    <h3>Käsespätzle</h3>
+                    <p>Hausgemachte Spätzle mit würzigem Bergkäse überbacken und knusprigen Röstzwiebeln. Vegetarischer Genuss.</p>
+                    <span class="specialty-tag">Vegetarisch</span>
+                </div>
+                <div class="specialty-card">
+                    <div class="specialty-icon">🦐</div>
+                    <h3>Meeresfrüchte</h3>
+                    <p>Frische Muscheln und saisonale Meeresfrüchte, mediterran zubereitet. Eine besondere Ergänzung unserer Karte.</p>
+                    <span class="specialty-tag">Saisonal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Unsere Speisekarte</h2>
+                <div class="divider"></div>
+                <p>Traditionelle Gerichte aus besten Zutaten, täglich frisch zubereitet</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-category">
+                    <div class="menu-category-header">
+                        <span class="menu-category-icon">🥩</span>
+                        <h3>Hauptgerichte</h3>
+                    </div>
+                    <div class="menu-category-content">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Wiener Schnitzel</h4>
+                                <p>Vom Kalb, mit Petersilkartoffeln</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Cordon Bleu</h4>
+                                <p>Mit Schinken und Käse gefüllt</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Zwiebelrostbraten</h4>
+                                <p>Mit Röstzwiebeln und Bratkartoffeln</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Backhendl</h4>
+                                <p>Knusprig gebacken, mit Kartoffelsalat</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <div class="menu-category-header">
+                        <span class="menu-category-icon">🦐</span>
+                        <h3>Fisch & Meeresfrüchte</h3>
+                    </div>
+                    <div class="menu-category-content">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Muscheln in Weißwein</h4>
+                                <p>Frische Miesmuscheln, mediterran</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Gebratener Zander</h4>
+                                <p>Mit Butter und Kräutern</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Calamari</h4>
+                                <p>Gebacken oder gegrillt</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <div class="menu-category-header">
+                        <span class="menu-category-icon">🍝</span>
+                        <h3>Vegetarisch & Beilagen</h3>
+                    </div>
+                    <div class="menu-category-content">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Käsespätzle</h4>
+                                <p>Mit Röstzwiebeln überbacken</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Gemischter Salat</h4>
+                                <p>Mit Hausvinaigrette</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Kartoffelgratin</h4>
+                                <p>Mit Sahne und Käse</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <div class="menu-category-header">
+                        <span class="menu-category-icon">🍰</span>
+                        <h3>Süße Nachspeisen</h3>
+                    </div>
+                    <div class="menu-category-content">
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Marillen Palatschinken</h4>
+                                <p>Mit Marillenröster</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Kaiserschmarrn</h4>
+                                <p>Mit Zwetschgenröster</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-info">
+                                <h4>Apfelstrudel</h4>
+                                <p>Mit Vanillesauce</p>
+                            </div>
+                            <span class="menu-item-price">€[Preis]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-note">
+                <h4>📋 Tägliche Specials</h4>
+                <p>Fragen Sie nach unseren saisonalen Gerichten und Tagesempfehlungen. Wir kochen frisch à la minute!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image"></div>
+                <div class="about-content">
+                    <h3>Tradition trifft Gastfreundschaft</h3>
+                    <p>Unser Stüberl ist mehr als ein Restaurant. Es ist ein Ort der Begegnung, wo Stammgäste und Besucher gleichermaßen die echte österreichische Küche genießen können. In gemütlicher, holzgetäfelter Atmosphäre servieren wir seit Generationen klassische Hausmannskost.</p>
+                    <p>Wir legen größten Wert auf frische, regionale Zutaten und handwerkliche Zubereitung. Jedes Gericht wird mit Sorgfalt und Liebe zum Detail gekocht. Denn bei uns gilt: Qualität vor Quantität.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🏔️</div>
+                            <span class="about-feature-text">Regionale Zutaten</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">👨‍🍳</div>
+                            <span class="about-feature-text">À la minute Küche</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">🪵</div>
+                            <span class="about-feature-text">Gemütliche Stube</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">❤️</div>
+                            <span class="about-feature-text">Herzliche Gastlichkeit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Was Unsere Gäste Sagen</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="reviews-stats">
+                <div class="review-stat">
+                    <div class="review-stat-number">4.4</div>
+                    <div class="review-stars">★★★★☆</div>
+                    <div class="review-stat-label">Durchschnittliche Bewertung</div>
+                </div>
+                <div class="review-stat">
+                    <div class="review-stat-number">150+</div>
+                    <div class="review-stat-label">Zufriedene Gäste</div>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">Fantastisches Schnitzel und super freundlicher Service! Die gemütliche Atmosphäre macht das Essen zu einem besonderen Erlebnis.</p>
+                    <span class="review-author">Online Bewertung</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">Das beste Cordon Bleu in der Stadt! Die Portionen sind großzügig und die Qualität ist erstklassig. Wir kommen immer wieder.</p>
+                    <span class="review-author">Online Bewertung</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">Ein echtes Stüberl wie aus dem Bilderbuch. Traditionelle Küche auf hohem Niveau und ein Ambiente zum Wohlfühlen.</p>
+                    <span class="review-author">Online Bewertung</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="hours" id="hours">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Öffnungszeiten</h2>
+                <div class="divider"></div>
+                <p>Wir freuen uns auf Ihren Besuch</p>
+            </div>
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <div class="hours-card-icon">📅</div>
+                    <h3>Dienstag bis Freitag</h3>
+                    <p class="highlight">[Öffnungszeiten einfügen]</p>
+                    <p>Mittagessen & Abendservice</p>
+                </div>
+                <div class="hours-card">
+                    <div class="hours-card-icon">🌟</div>
+                    <h3>Samstag</h3>
+                    <p class="highlight">[Öffnungszeiten einfügen]</p>
+                    <p>Wochenend Genuss</p>
+                </div>
+                <div class="hours-card">
+                    <div class="hours-card-icon">🚫</div>
+                    <h3>Sonntag & Montag</h3>
+                    <p class="highlight">Ruhetage</p>
+                    <p>Wir tanken Kraft für Sie</p>
+                </div>
+            </div>
+            <div class="hours-note">
+                <p>💡 <strong>Tipp:</strong> Reservierung empfohlen, besonders an Wochenenden und Abenden.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Besuchen Sie Uns</h2>
+                <div class="divider"></div>
+                <p>Wir freuen uns auf Ihren Besuch in unserem Stüberl</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Kontakt & Anfahrt</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Adresse</h4>
+                            <p>Rainerstraße 11<br>5020 Salzburg, Österreich</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Telefon</h4>
+                            <p>[Telefonnummer einfügen]</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🚌</div>
+                        <div class="contact-text">
+                            <h4>Anfahrt</h4>
+                            <p>[Öffentliche Verkehrsmittel einfügen]</p>
+                        </div>
+                    </div>
+
+                    <div class="reservation-box">
+                        <h4>🍽️ Tisch Reservieren</h4>
+                        <p>Für Reservierungen rufen Sie uns bitte an oder besuchen Sie uns direkt. Wir empfehlen eine Reservierung, besonders an Wochenenden.</p>
+                        <a href="#contact" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.85rem;">Kontakt aufnehmen</a>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Rainerstraße+11,+5020+Salzburg,+Austria&output=embed"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>🏠 [Ihr Geschäftsname]</h3>
+                <p>Ihr traditionelles Stüberl in Salzburg. Klassische österreichische Hausmannskost, frische Meeresfrüchte und herzliche Gastfreundschaft in gemütlicher Stubenatmosphäre.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#specialties">Spezialitäten</a></li>
+                    <li><a href="#menu">Speisekarte</a></li>
+                    <li><a href="#about">Über Uns</a></li>
+                    <li><a href="#reviews">Bewertungen</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-hours">
+                <h4>Öffnungszeiten</h4>
+                <p>Di bis Fr: [Zeiten einfügen]</p>
+                <p>Samstag: [Zeiten einfügen]</p>
+                <p>So & Mo: Ruhetag</p>
+                <p style="margin-top: 1rem;">📍 Rainerstraße 11<br>5020 Salzburg</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 [Ihr Geschäftsname]. Alle Rechte vorbehalten.</p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">Powered by <a href="https://sumifai.com/web/" style="color: inherit; text-decoration: underline;">sumifai.web</a></p>
+            <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.5;">Unabhängige Analyse. Nicht verbunden mit oder unterstützt von einer Partei.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.getElementById('navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
